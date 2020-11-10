@@ -8,7 +8,7 @@ import math
 odom = Odometry()
 scan = LaserScan()
 
-kp = 0.1
+kp = 0.5
 
 rospy.init_node('cmd_node')
 
