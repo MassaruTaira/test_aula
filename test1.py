@@ -59,18 +59,22 @@ def timerCallBack(event):
     
     scan_len = len(scan.ranges)
     read = min(scan_len)
+    if read > 0:
     
-    error = -(setpoint - read)
-    
-    P = kp*error
-    I = 0
-    D = 0
+        error = -(setpoint - read)
         
-    control = P+I+D
-    if control > 1:
-        control = 1
-    elif control < -1:
-        control = -1
+        P = kp*error
+        I = 0
+        D = 0
+            
+        control = P+I+D
+        if control > 1:
+            control = 1
+        elif control < -1:
+            control = -1
+            
+    else:
+        control = 0
 
     
     
