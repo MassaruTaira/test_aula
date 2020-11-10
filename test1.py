@@ -58,10 +58,10 @@ def timerCallBack(event):
     D = 0
     
     control = P+I+D
-    if control > 1:
-        control = 1
-    elif control < -1:
-        control = -1
+    if control > 10:
+        control = 10
+    elif control < -10:
+        control = -10
     
     
     msg = Twist()
