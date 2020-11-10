@@ -48,7 +48,7 @@ def timerCallBack(event):
             error -= 360
     """
     
-    setpoint = (-1,-1)
+    setpoint = (0,-1)
     position = odom.pose.pose.position
     dist = setpoint[0]-position.x #math.sqrt((setpoint[0] - position.x)**2  + (setpoint[1] - position.y)**2)
     error = dist 
