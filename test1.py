@@ -8,7 +8,7 @@ import math
 odom = Odometry()
 scan = LaserScan()
 
-kp = 0.01
+kp = 0.1
 
 rospy.init_node('cmd_node')
 
@@ -50,7 +50,7 @@ def timerCallBack(event):
     
     setpoint = (0,-1)
     position = odom.pose.pose.position
-    dist = setpoint[0]-position.x #math.sqrt((setpoint[0] - position.x)**2  + (setpoint[1] - position.y)**2)
+    dist = setpoint[0] - position.x #math.sqrt((setpoint[0] - position.x)**2  + (setpoint[1] - position.y)**2)
     error = dist 
     
     P = kp*error
